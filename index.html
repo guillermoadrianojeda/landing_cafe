@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producción de Café</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+        }
+
+        .parallax::before {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .parallax img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section {
+            position: relative;
+            padding: 50px 20px;
+            background: #333;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax" style="background-image: url('image1.webp');">
+        <div class="content">
+            <h1>El Viaje del Café</h1>
+            <p>Desde la planta hasta tu taza</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="content">
+            <h2>1. Cultivo de la Planta</h2>
+            <p>El proceso comienza con el cultivo de las plantas de café en plantaciones bajo el sol brillante.</p>
+        </div>
+    </div>
+    <div class="parallax" style="background-image: url('image2.webp');">
+        <div class="content">
+            <h2>2. Cosecha de las Cerezas</h2>
+            <p>Los agricultores recogen las cerezas maduras a mano para asegurar la mejor calidad.</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="content">
+            <h2>3. Procesamiento</h2>
+            <p>Las cerezas de café se lavan, despulpan y se secan al sol antes de ser tostadas.</p>
+        </div>
+    </div>
+    <div class="parallax" style="background-image: url('image3.webp');">
+        <div class="content">
+            <h2>4. Preparación del Café</h2>
+            <p>Un barista experto prepara una taza perfecta utilizando una máquina de espresso.</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="content">
+            <h2>Disfruta tu Café</h2>
+            <p>Ahora puedes disfrutar de una deliciosa taza de café, sabiendo todo el trabajo que hay detrás.</p>
+        </div>
+    </div>
+</body>
+</html>
