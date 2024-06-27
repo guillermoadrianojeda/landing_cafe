@@ -6,94 +6,121 @@
     <title>Producción de Café</title>
     <style>
         body, html {
-            height: 100%;
             margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
+            color: #333;
+        }
+        header {
+            background-color: #000;
             color: #fff;
+            padding: 20px 0;
             text-align: center;
         }
-
-        .parallax {
-            background-attachment: fixed;
-            background-size: cover;
-            height: 100vh;
-            position: relative;
-        }
-
-        .parallax::before {
-            content: "";
-            display: block;
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .parallax img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .section {
-            position: relative;
-            padding: 50px 20px;
-            background: #333;
-        }
-
-        h1 {
-            font-size: 3em;
+        header h1 {
             margin: 0;
+            font-size: 2.5em;
         }
-
-        p {
-            font-size: 1.5em;
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
         }
-
+        nav a {
+            color: #fff;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .banner {
+            width: 100%;
+            height: 500px;
+            background-image: url('image1.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .banner h2 {
+            color: #fff;
+            font-size: 3em;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
         .content {
-            position: relative;
-            z-index: 1;
+            padding: 50px 20px;
+        }
+        .content h2 {
+            font-size: 2em;
+            margin-top: 0;
+        }
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 50px 0;
+        }
+        .section img {
+            width: 45%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .section p {
+            width: 45%;
+            font-size: 1.2em;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
         }
     </style>
 </head>
 <body>
-    <div class="parallax" style="background-image: url('image1.webp');">
-        <div class="content">
-            <h1>El Viaje del Café</h1>
-            <p>Desde la planta hasta tu taza</p>
+    <header>
+        <h1>El Viaje del Café</h1>
+    </header>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Nuestro Café</a>
+        <a href="#">Proceso</a>
+        <a href="#">Contacto</a>
+    </nav>
+    <div class="banner">
+        <h2>Desde la Planta hasta tu Taza</h2>
+    </div>
+    <div class="content">
+        <div class="section">
+            <img src="image1.webp" alt="Cultivo de la Planta">
+            <p>
+                El proceso comienza con el cultivo de las plantas de café en plantaciones bajo el sol brillante. Las cerezas rojas maduras son una señal de que el café está listo para ser cosechado.
+            </p>
+        </div>
+        <div class="section">
+            <p>
+                Los agricultores recogen las cerezas maduras a mano para asegurar la mejor calidad. Este cuidadoso proceso garantiza que solo las mejores cerezas sean seleccionadas.
+            </p>
+            <img src="image2.webp" alt="Cosecha de las Cerezas">
+        </div>
+        <div class="section">
+            <img src="image3.webp" alt="Procesamiento de los Granos">
+            <p>
+                Las cerezas de café se lavan, despulpan y se secan al sol antes de ser tostadas. Este proceso es esencial para desarrollar el sabor único del café.
+            </p>
+        </div>
+        <div class="section">
+            <p>
+                Un barista experto prepara una taza perfecta utilizando una máquina de espresso. Disfruta de una deliciosa taza de café, sabiendo todo el trabajo que hay detrás.
+            </p>
+            <img src="image4.webp" alt="Preparación del Café">
         </div>
     </div>
-    <div class="section">
-        <div class="content">
-            <h2>1. Cultivo de la Planta</h2>
-            <p>El proceso comienza con el cultivo de las plantas de café en plantaciones bajo el sol brillante.</p>
-        </div>
-    </div>
-    <div class="parallax" style="background-image: url('image2.webp');">
-        <div class="content">
-            <h2>2. Cosecha de las Cerezas</h2>
-            <p>Los agricultores recogen las cerezas maduras a mano para asegurar la mejor calidad.</p>
-        </div>
-    </div>
-    <div class="section">
-        <div class="content">
-            <h2>3. Procesamiento</h2>
-            <p>Las cerezas de café se lavan, despulpan y se secan al sol antes de ser tostadas.</p>
-        </div>
-    </div>
-    <div class="parallax" style="background-image: url('image3.webp');">
-        <div class="content">
-            <h2>4. Preparación del Café</h2>
-            <p>Un barista experto prepara una taza perfecta utilizando una máquina de espresso.</p>
-        </div>
-    </div>
-    <div class="section">
-        <div class="content">
-            <h2>Disfruta tu Café</h2>
-            <p>Ahora puedes disfrutar de una deliciosa taza de café, sabiendo todo el trabajo que hay detrás.</p>
-        </div>
-    </div>
+    <footer>
+        <p>&copy; 2024 Producción de Café. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
