@@ -10,12 +10,16 @@
             padding: 0;
             font-family: Arial, sans-serif;
             color: #333;
+            scroll-behavior: smooth;
         }
         header {
             background-color: #000;
             color: #fff;
             padding: 20px 0;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
         }
         header h1 {
             margin: 0;
@@ -25,11 +29,17 @@
             display: flex;
             justify-content: center;
             background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 70px;
+            z-index: 1000;
         }
         nav a {
             color: #fff;
             padding: 15px 20px;
             text-decoration: none;
+            transition: background-color 0.3s;
         }
         nav a:hover {
             background-color: #555;
@@ -43,15 +53,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
         .banner h2 {
             color: #fff;
             font-size: 3em;
             background: rgba(0, 0, 0, 0.5);
             padding: 20px;
+            animation: fadeIn 2s;
         }
         .content {
-            padding: 50px 20px;
+            padding: 100px 20px 50px 20px;
+            margin-top: 120px;
         }
         .content h2 {
             font-size: 2em;
@@ -62,6 +75,9 @@
             align-items: center;
             justify-content: space-around;
             margin: 50px 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s, transform 1s;
         }
         .section img {
             width: 45%;
@@ -78,6 +94,11 @@
             text-align: center;
             padding: 20px 0;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -85,34 +106,35 @@
         <h1>El Viaje del Café</h1>
     </header>
     <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Nuestro Café</a>
-        <a href="#">Proceso</a>
-        <a href="#">Contacto</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#cultivo">Cultivo</a>
+        <a href="#cosecha">Cosecha</a>
+        <a href="#procesamiento">Procesamiento</a>
+        <a href="#preparacion">Preparación</a>
     </nav>
-    <div class="banner">
+    <div class="banner" id="inicio">
         <h2>Desde la Planta hasta tu Taza</h2>
     </div>
     <div class="content">
-        <div class="section">
+        <div class="section" id="cultivo">
             <img src="image1.webp" alt="Cultivo de la Planta">
             <p>
                 El proceso comienza con el cultivo de las plantas de café en plantaciones bajo el sol brillante. Las cerezas rojas maduras son una señal de que el café está listo para ser cosechado.
             </p>
         </div>
-        <div class="section">
+        <div class="section" id="cosecha">
             <p>
                 Los agricultores recogen las cerezas maduras a mano para asegurar la mejor calidad. Este cuidadoso proceso garantiza que solo las mejores cerezas sean seleccionadas.
             </p>
             <img src="image2.webp" alt="Cosecha de las Cerezas">
         </div>
-        <div class="section">
+        <div class="section" id="procesamiento">
             <img src="image3.webp" alt="Procesamiento de los Granos">
             <p>
                 Las cerezas de café se lavan, despulpan y se secan al sol antes de ser tostadas. Este proceso es esencial para desarrollar el sabor único del café.
             </p>
         </div>
-        <div class="section">
+        <div class="section" id="preparacion">
             <p>
                 Un barista experto prepara una taza perfecta utilizando una máquina de espresso. Disfruta de una deliciosa taza de café, sabiendo todo el trabajo que hay detrás.
             </p>
@@ -122,5 +144,24 @@
     <footer>
         <p>&copy; 2024 Producción de Café. Todos los derechos reservados.</p>
     </footer>
+    <script>
+        // Animaciones al hacer scroll
+        const sections = document.querySelectorAll('.section');
+        const options = {
+            threshold: 0.1
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
